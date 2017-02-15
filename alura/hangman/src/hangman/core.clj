@@ -5,9 +5,10 @@
 
 (defn lose [] (print "You lose"))
 
-(defn game [lifes]
+(defn game [lifes word hits]
   (if ( = lifes 0)
     (lose)
+    (if)
     (do
       (print lifes)
       (game (dec lifes))
