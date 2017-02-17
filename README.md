@@ -118,6 +118,16 @@ Learning clojure
 ```clojure
 (map FUNCTION elements)
 ```
+- **LET** _create_ **SCOPE**
+```clojure
+(let [varName (function or value)]
+  (function)
+  (function)
+)
+```
+
+
+
 ### ARRAY
 ```clojure
 #{element, elementNotEqual}
