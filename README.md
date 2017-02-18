@@ -73,6 +73,15 @@ Learning clojure
 ```
 
 
+### LOOPS
+- **DOSEQ**
+```clojure
+(doseq [var (seq list)]
+  (function)
+  (funtion)
+  (println var)
+)
+```
 
 
 
@@ -118,6 +127,10 @@ Learning clojure
 ```clojure
 (map FUNCTION elements)
 ```
+- **REDUCE**
+```clojure
+(reduce (fn[acc n] (+ acc n)) list)
+```
 - **LET** _create_ **SCOPE**
 ```clojure
 (let [varName (function or value)]
@@ -125,8 +138,16 @@ Learning clojure
   (function)
 )
 ```
-
-
+- **RECURSION SYRINGE** | Use _only_ case the **recursion** is the _last_ call
+```clojure
+(defn game [param]
+  (recur param)
+)
+```
+- **PROCCESS SEQUENCIAL LIST**
+```clojure
+(->> list (map (fn [x] (* x 2))) (reduce (fn[acc n] (+ acc n))))
+```
 
 ### ARRAY
 ```clojure
@@ -172,6 +193,16 @@ lein repl
 ```shell
 lein new app appName
 ```
+- **EXECUTE PROGRAM(main)**
+```shell
+lein run
+```
+- **DEPLOY** | _Create_ **package jar**
+```shell
+lein uberjar
+```
+
+
 
 # OBSERVATIONS
 - **Leiningen** is **boilerplat**
@@ -189,3 +220,5 @@ lein new app appName
 ```clojure
 (defn name! [] sideEffect)
 ```
+- **LAZY FUNCTION**
+> This happens because in functional languages there is the concept of lazy function, which is not executed until its result is requested
